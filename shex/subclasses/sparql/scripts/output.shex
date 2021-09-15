@@ -1,0 +1,17 @@
+prefix : <http://www.wikidata.org/entity/>
+
+<disease>  {
+  :P31	[
+	<http://www.wikidata.org/entity/Q4936952>
+	<http://www.wikidata.org/entity/Q2725685>
+	<http://www.wikidata.org/entity/Q2511666>
+	<http://www.wikidata.org/entity/Q1762173>
+	<http://www.wikidata.org/entity/Q505535>
+	<http://www.wikidata.org/entity/Q187215>
+	<http://www.wikidata.org/entity/Q47273>
+	<http://www.wikidata.org/entity/Q18394063>
+	<http://www.wikidata.org/entity/Q17150493>
+	<http://www.wikidata.org/entity/Q7314316>
+	<http://www.wikidata.org/entity/Q3620801>
+	]
+}
