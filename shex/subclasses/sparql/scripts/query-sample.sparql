@@ -1,7 +1,0 @@
-prefix wdt: <http://www.wikidata.org/prop/direct/>
-prefix wd:  <http://www.wikidata.org/entity/>
-
-# Subclasses of anatomicStructure
-select ?subclass where {
-    ?subclass wdt:P279+ wd:Q4936952
-}limit 10
