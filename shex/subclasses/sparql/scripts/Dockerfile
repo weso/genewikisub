@@ -3,4 +3,4 @@ WORKDIR /app
 COPY "package*.json" "./"
 RUN npm install
 COPY . .
-CMD ["node","shex-subclass-generator.js"]
+ENTRYPOINT ["node","shex-subclass-generator.js"]
