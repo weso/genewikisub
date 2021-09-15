@@ -1,4 +1,5 @@
 import {SPARQLQueryDispatcher} from './SPARQLQueryDispatcher.js';
+import {ShExFormater} from './ShExFormater.js';
 
 
 const endpointUrl = 'https://query.wikidata.org/sparql';
@@ -19,20 +20,10 @@ let uris = await queryDispatcher.query( sparqlQuery ).then( (data)=>{
 	})
 } );
 
-
 //PARÁMETROS
 let shapeName = 'disease';
 let identifier = 'Q4936952';
+let shexFormater = new ShExFormater(shapeName,identifier,uris);
 
-
-let wikidataUri = 'http://www.wikidata.org/entity/';
-let wikidataPrefix = 'prefix : <'+wikidataUri+'>';
-let shape = wikidataPrefix +'\n\n';
-shape+='<'+shapeName+'>  {\n  :P31\t[\n\t<'+wikidataUri+identifier+'>\n';
-let schema = uris.reduce((acc,uri)=>{
-	acc+= '\t<'+uri+'>\n';
-	return acc;
-},shape)
-schema+='\t]\n}'
-
+let schema = shexFormater.format();
 console.log(schema)
