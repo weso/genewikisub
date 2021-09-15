@@ -2,23 +2,26 @@ import {SPARQLQueryDispatcher} from './utils/SPARQLQueryDispatcher.js';
 import {ShExFormater} from './utils/ShExFormater.js';
 import {FileUtils} from './utils/FileUtils.js';
 import {SPARQLUtils} from './utils/SPARQLUtils.js';
+import {ArgumentUtils} from './utils/ArgumentUtils.js';
+const endpoint = 'https://query.wikidata.org/sparql'
 
+const shapeName = process.argv[2];
+const identifier = process.argv[3];
 
-const shapeName = process.env.SHAPE_NAME;
-const identifier = process.env.WIKIDATA_IDENTIFIER;
-const endpointUrl = process.env.ENDPOINT;
-const output = process.env.OUTPUT_FILE;
+if(ArgumentUtils.checkArguments(shapeName,identifier)){
 
-const query = SPARQLUtils.getQueryForItem(identifier);
-const queryDispatcher = new SPARQLQueryDispatcher( endpointUrl,query);
+	const query = SPARQLUtils.getQueryForItem(identifier);
+	const queryDispatcher = new SPARQLQueryDispatcher( endpoint,query);
 
-queryDispatcher.query().then( (data)=>{
-	let uris  = data.results.bindings.map((element)=>{
-		return element.subclass.value;
-	})
-	let shexFormater = new ShExFormater(shapeName,identifier,uris);
-	let schema = shexFormater.format();
-	FileUtils.writeFile(output,schema);
-} );
+	queryDispatcher.query().then( (data)=>{
+		let uris  = data.results.bindings.map((element)=>{
+			return element.subclass.value;
+		})
+		let shexFormater = new ShExFormater(shapeName,identifier,uris);
+		let schema = shexFormater.format();
+		FileUtils.writeFile(shapeName+'.shex',schema);
+	} );
+
+}
 
 

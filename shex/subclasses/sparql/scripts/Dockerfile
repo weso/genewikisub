@@ -4,9 +4,7 @@ COPY "package*.json" "./"
 RUN npm install
 COPY . .
 
-ENV SHAPE_NAME="AnatomicalStructure"
-ENV WIKIDATA_IDENTIFIER="Q4936952"
-ENV ENDPOINT="https://query.wikidata.org/sparql"
-ENV OUTPUT_FILE="AnatomicalStructure.shex"
+ARG SHAPE_NAME="AnatomicalStructure"
+ARG WIKIDATA_IDENTIFIER="Q4936952"
 
-CMD ["node","shex-subclass-generator.js"]
+ENTRYPOINT ["node","shex-subclass-generator.js"]
