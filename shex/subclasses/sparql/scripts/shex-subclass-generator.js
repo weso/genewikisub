@@ -19,7 +19,7 @@ if(ArgumentUtils.checkArguments(shapeName,identifier)){
 		})
 		let shexFormater = new ShExFormater(shapeName,identifier,uris);
 		let schema = shexFormater.format();
-		FileUtils.writeFile(shapeName+'.shex',schema);
+		FileUtils.writeShExFile(shapeName,schema);
 	} );
 
 }

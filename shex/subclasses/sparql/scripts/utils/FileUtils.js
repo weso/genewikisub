@@ -1,9 +1,9 @@
 import fs from 'fs';
 
 export class FileUtils{
-    static writeFile(path,content){
+    static writeShExFile(path,content){
         try {
-            fs.writeFileSync(path, content);
+            fs.writeFileSync(path+'.shex', content);
           } catch (err) {
             console.error(err)
           }
