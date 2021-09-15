@@ -3,8 +3,4 @@ WORKDIR /app
 COPY "package*.json" "./"
 RUN npm install
 COPY . .
-
-ARG SHAPE_NAME="AnatomicalStructure"
-ARG WIKIDATA_IDENTIFIER="Q4936952"
-
-ENTRYPOINT ["node","shex-subclass-generator.js"]
+CMD ["node","shex-subclass-generator.js"]
