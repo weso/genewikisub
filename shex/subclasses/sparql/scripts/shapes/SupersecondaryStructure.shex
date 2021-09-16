@@ -1,0 +1,22 @@
+prefix : <http://www.wikidata.org/entity/>
+
+<SupersecondaryStructure>  {
+  :P31	[
+	<http://www.wikidata.org/entity/Q7644128>
+	<http://www.wikidata.org/entity/Q3273544>
+	<http://www.wikidata.org/entity/Q24726924>
+	<http://www.wikidata.org/entity/Q58210719>
+	<http://www.wikidata.org/entity/Q6591474>
+	<http://www.wikidata.org/entity/Q15845157>
+	<http://www.wikidata.org/entity/Q17125274>
+	<http://www.wikidata.org/entity/Q17136775>
+	<http://www.wikidata.org/entity/Q17142856>
+	<http://www.wikidata.org/entity/Q17145885>
+	<http://www.wikidata.org/entity/Q25325279>
+	<http://www.wikidata.org/entity/Q96372335>
+	<http://www.wikidata.org/entity/Q97889213>
+	<http://www.wikidata.org/entity/Q3195879>
+	<http://www.wikidata.org/entity/Q25323973>
+	<http://www.wikidata.org/entity/Q27919745>
+	]
+}

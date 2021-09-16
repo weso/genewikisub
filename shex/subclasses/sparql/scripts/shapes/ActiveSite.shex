@@ -1,0 +1,7 @@
+prefix : <http://www.wikidata.org/entity/>
+
+<ActiveSite>  {
+  :P31	[
+	<http://www.wikidata.org/entity/Q423026>
+	]
+}

@@ -1,11 +1,14 @@
 export class ArgumentUtils{
-    static checkArguments(arg1,arg2){
-        if(!arg1){
+    static checkArguments(shapeName,id,output){
+        if(!shapeName){
             console.log("Missing arg 1 ShapeName")
         }
-        if(!arg2){
+        if(!id){
             console.log("Missing arg 2 Identifier")
         }
-        return arg1 && arg2
+        if(!output){
+            console.log("Missing arg 2 Output path")
+        }
+        return shapeName && id && output
     }
 }

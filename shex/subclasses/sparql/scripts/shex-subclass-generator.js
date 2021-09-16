@@ -7,8 +7,9 @@ const endpoint = 'https://query.wikidata.org/sparql'
 
 const shapeName = process.argv[2];
 const identifier = process.argv[3];
+const output = process.argv[4];
 
-if(ArgumentUtils.checkArguments(shapeName,identifier)){
+if(ArgumentUtils.checkArguments(shapeName,identifier,output)){
 
 	const query = SPARQLUtils.getQueryForItem(identifier);
 	const queryDispatcher = new SPARQLQueryDispatcher( endpoint,query);
@@ -19,7 +20,7 @@ if(ArgumentUtils.checkArguments(shapeName,identifier)){
 		})
 		let shexFormater = new ShExFormater(shapeName,identifier,uris);
 		let schema = shexFormater.format();
-		FileUtils.writeShExFile(shapeName,schema);
+		FileUtils.writeShExFile(output+"/"+shapeName,schema);
 	} );
 
 }
