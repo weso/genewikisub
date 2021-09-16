@@ -1,0 +1,7 @@
+prefix : <http://www.wikidata.org/entity/>
+
+<Taxon>  {
+  :P31	[
+	<http://www.wikidata.org/entity/Q1652>
+	]
+}
