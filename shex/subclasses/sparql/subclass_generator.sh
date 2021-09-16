@@ -7,6 +7,6 @@ docker pull wesogroup/shex-subclass-generator;
 
 while IFS="," read -r rec_column1 rec_column2 
 do
-    docker run -v /gfs/projects/genwiki/subclasses2/:/app wesogroup/shex-subclass-generator $rec_column1 $rec_column2
+    docker run -v /gfs/projects/genwiki/subclasses/:/app wesogroup/shex-subclass-generator $rec_column1 $rec_column2
     echo "Generated subclasses schema for $rec_column1 $rec_column2"
 done < shapeslist.csv
