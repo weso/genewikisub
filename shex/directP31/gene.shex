@@ -1,0 +1,5 @@
+prefix : <http://www.wikidata.org/entity/>
+
+<gene>  {
+ :P31 [ :Q7187 ]
+}
