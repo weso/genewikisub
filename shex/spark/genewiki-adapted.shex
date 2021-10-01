@@ -1,0 +1,218 @@
+PREFIX :  <http://www.wikidata.org/entity/>
+
+start=@<disease>
+
+<active_site> EXTRA :P31 {
+  :P31      @<active_site_wd> ;
+  :P361 	   @<protein_family> * ;
+}
+  
+<active_site_wd>  [ :Q423026 ] 
+
+<anatomical_structure> EXTRA :P31 {
+  :P31  @<anatomical_structure_wd> ;
+  :P361 @<anatomical_structure> * ; 
+  :P527 @<anatomical_structure> *
+}
+
+<anatomical_structure_wd> [ :Q4936952 ]
+
+<binding_site> EXTRA :P31 {
+  :P31  @<binding_site_wd> ;
+  :P361 @<protein_family> *
+}
+
+<binding_site_wd> [ :Q616005 ]
+
+<biological_pathway> EXTRA :P31 {
+  :P31  @<biological_pathway_wd> ;
+  :P361 @<biological_pathway> * ; 
+  :P361 @<gene> * ; 
+  :P527 @<biological_pathway> * ;
+  :P527 @<gene> * ; 
+}
+
+<biological_pathway_wd> [ :Q4915012 ] 
+
+
+<biological_process> EXTRA :P31 {
+  :P31   @<biological_process_wd>;
+  #:P686 xsd:string ;
+}
+
+<biological_process_wd> [ :Q2996394 ]
+
+<chemical_compound> EXTRA :P31 {
+  :P31  @<chemical_compound_wd>;
+  :P2868 @<therapeutic_use> * ;
+  :P2868 @<pharmacologic_action> * ;
+  :P769  @<therapeutic_use> * ;
+  :P769  @<pharmacologic_action> * ;
+  :P279  @<pharmacologic_action> * ;
+  :P3780 @<pharmaceutical_product> * ;
+  :P2175 @<disease> * ;
+  :P361  @<biological_pathway> * ;
+  :P361  @<medication> * ; 
+  :P703  @<taxon> * ;
+  :P3364 @<chemical_compound> * 
+}
+
+<chemical_compound_wd> [ :Q11173 ] 
+
+<chromosome> EXTRA :P31 {
+  :P31 @<chromosome_wd>
+}
+
+<chromosome_wd>  [ :Q37748 ]
+
+<disease> EXTRA :P31 {
+  :P31   @<disease_wd>;
+  :P780  @<disease> * ;
+  :P780  @<symptom> * ; 
+  :P828  @<taxon> * ;
+  :P2293 @<gene> * ;
+  :P927  @<anatomical_structure> * ;
+  :P2176 @<medication> * ;
+  :P2176 @<chemical_compound> * ;
+}
+
+<disease_wd> [ :Q12136 ]
+
+<gene> EXTRA :P31 {
+  :P31   @<gene_wd> ;
+  :P703  @<taxon> * ;
+  :P684  @<gene> * ; 
+  :P682  @<biological_process> ;
+  :P688  @<protein> * ;
+  :P527  @<biological_pathway> *;
+  :P1057 @<chromosome> ;
+}
+
+<gene_wd> [ :Q7187 ]
+
+<mechanism_of_action> EXTRA :P31 {
+  :P31 @<mechanism_of_action_wd>
+}
+
+<mechanism_of_action_wd> [ :Q3271540 ] 
+
+<medication> EXTRA :P31 {
+  :P31   @<medication_wd>;
+  :P2175 @<disease> * ;
+  :P3780 @<pharmaceutical_product> * ;
+  :P527  @<medication> * ;
+  :P361  @<biological_pathway> * ;
+  :P769  @<pharmacologic_action> * ;
+  :P769  @<chemical_compound> * ;
+  :P769  @<therapeutic_use> * ;
+  :P2868 @<pharmacologic_action> * ;
+  :P2868 @<therapeutic_use> * ;
+  :P279  @<pharmacologic_action> * ;
+  :P279  @<therapeutic_use> * ;
+}
+
+<medication_wd> [ :Q12140 ] 
+
+<molecular_function> EXTRA :P31 {
+  :P31  @<molecular_function_wd>;
+  #:P686 xsd:string ;
+}
+
+<molecular_function_wd> [ :Q14860489 ]
+
+<pharmaceutical_product> EXTRA :P31 {
+  :P31   @<pharmaceutical_product_wd>;
+  :P3781 @<therapeutic_use> * ;
+  :P3781 @<pharmacologic_action> * ;
+  :P3781 @<chemical_compound> * ;
+  :P4044 @<disease> *
+}
+
+<pharmaceutical_product_wd>  [ :Q28885102 ]
+
+<pharmacologic_action> EXTRA :P31 {
+  :P31  @<pharmacologic_action_wd> ;
+  :P3780 @<pharmaceutical_product> * ;
+  :P2175 @<disease> *
+}
+
+<pharmacologic_action_wd>  [:Q50377224 ]
+
+<protein_domain> EXTRA :P31 {
+  :P31  @<protein_domain_wd> ;
+  :P527 @<protein_domain> * ;
+  :P361 @<protein_domain> * ; 
+}
+<protein_domain_wd> [ :Q898273 ]
+
+<protein_family> EXTRA :P31 {
+  :P31  @<protein_family_wd>;
+  :P527 @<protein> * ;
+}
+
+<protein_family_wd> [ :Q417841 ] 
+
+<protein> EXTRA :P31 {
+  :P31  @<protein_wd>;
+  :P129 @<medication> * ; 
+  :P129 @<protein>  * ; 
+  :P129 @<chemical_compound>  * ; 
+  :P702 @<gene> * ;
+  :P361 @<protein_family> * ; 
+  :P527 @<active_site> * ;
+  :P527 @<binding_site> * ;
+  :P680 @<molecular_function> * ;
+  :P682 @<biological_process> * ;
+  :P703 @<taxon> * ;
+  :P681 @<anatomical_structure> * ;
+  :P681 @<protein> * ;
+}
+
+<protein_wd> [ :Q8054 ] 
+
+<ribosomal_RNA> EXTRA :P31 {
+  :P31  @<ribosomal_RNA_wd> ;
+  :P703 @<taxon> *
+}
+
+<ribosomal_RNA_wd> [ :Q28885102 ]
+
+<sequence_variant> EXTRA :P31 {
+  :P31   @<sequence_variant_wd> ;
+  :P3355 @<chemical_compound> * ; 
+  :P3354 @<chemical_compound> * ; 
+  :P3354 @<medication> * ; 
+  :P3355 @<chemical_compound> * ;
+  :P3355 @<medication> * ;
+  :P3433 @<gene> * ;
+  :P1057 @<chromosome> * ;
+}
+
+<sequence_variant_wd> [ :Q15304597 ]
+
+
+<supersecondary_structure> EXTRA :P31 {
+  :P31  @<supersecondary_structure_wd>;
+}
+
+<supersecondary_structure_wd> [ :Q7644128 ]
+
+<symptom> EXTRA :P31 {
+  :P31 @<symptom_wd>
+}
+
+<symptom_wd> [ :Q169872 ]
+
+<taxon> EXTRA :P31 {
+  :P31 @<taxon_wd>; 
+}
+
+<taxon_wd> [ :Q16521 ] 
+
+<therapeutic_use> EXTRA :P31 {
+  :P31   @<therapeutic_use_wd>;
+  :P3781 @<pharmaceutical_product> * ;
+  :P2175 @<disease> *
+}
+
+<therapeutic_use_wd> [ :Q50379781 ]
