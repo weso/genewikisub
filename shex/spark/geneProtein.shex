@@ -1,22 +1,17 @@
-PREFIX wde: <http://www.wikidata.org/entity/>
-PREFIX wd:  <http://www.wikidata.org/entity/>
-PREFIX :    <http://example.org/>
+PREFIX : <http://www.wikidata.org/entity/>
 
-# This schema describes the GeneWiki subset from Wikidata
-# More information: https://elifesciences.org/articles/52614
+start=@<gene>
 
-start=@:gene
-
-:gene EXTRA wde:P31 {
-  wde:P31   @:gene_type ;
-  wde:P684  @:gene * ; 
-  wde:P688  @:protein * ;
+<gene> EXTRA :P31 {
+ :P31   @<gene_type> ;
+ :P684  @<gene> * ; 
+ :P688  @<protein> * ;
 }
 
-:protein EXTRA wde:P31 {
-  wde:P31  @:protein_type ;
+<protein> EXTRA :P31 {
+ :P31  @<protein_type> ;
 }
 
-:gene_type    [ wd:Q7187 ]
-:protein_type [ wd:Q8054 ]
+<gene_type>    [:Q7187 ]
+<protein_type> [:Q8054 ]
 
